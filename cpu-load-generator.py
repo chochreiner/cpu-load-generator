@@ -25,7 +25,7 @@ def process(interval, utilization_list, ncpus):
     ncpus_str = str(ncpus)
     for utilization in utilization_list:
         utilization_str = str(utilization)
-        print "\nSwitching to " + utilization_str + "%"
+        print  "+ " + time.strftime("%I:%M:%S %p", time.localtime()) + ";" + utilization_str
         p = subprocess.Popen(['lookbusy',
                               '--ncpus', ncpus_str,
                               '--cpu-util', utilization_str])
